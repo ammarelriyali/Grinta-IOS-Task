@@ -13,6 +13,13 @@
 		04EB02D12AD82F5300998431 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EB02CF2AD82F5300998431 /* Main.storyboard */; };
 		04EB02D32AD82F5400998431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EB02D22AD82F5400998431 /* Assets.xcassets */; };
 		04EB02D62AD82F5400998431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EB02D42AD82F5400998431 /* LaunchScreen.storyboard */; };
+		04EB02DF2AD84CAE00998431 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04EB02DE2AD84CAE00998431 /* Alamofire */; };
+		04EB02EF2AD851EF00998431 /* Fixtur.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EB02EE2AD851EF00998431 /* Fixtur.xib */; };
+		04EB02F12AD8521400998431 /* Fixtur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB02F02AD8521400998431 /* Fixtur.swift */; };
+		04EB02F42AD8556600998431 /* Team.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EB02F32AD8556600998431 /* Team.xib */; };
+		04EB02F62AD8557A00998431 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB02F52AD8557A00998431 /* Team.swift */; };
+		04EB02F82AD85B2800998431 /* FixturesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EB02F72AD85B2800998431 /* FixturesList.storyboard */; };
+		04EB02FB2AD86BF300998431 /* CustomViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB02FA2AD86BF300998431 /* CustomViewProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,12 @@
 		04EB02D22AD82F5400998431 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04EB02D52AD82F5400998431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04EB02D72AD82F5400998431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04EB02EE2AD851EF00998431 /* Fixtur.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Fixtur.xib; sourceTree = "<group>"; };
+		04EB02F02AD8521400998431 /* Fixtur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtur.swift; sourceTree = "<group>"; };
+		04EB02F32AD8556600998431 /* Team.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Team.xib; sourceTree = "<group>"; };
+		04EB02F52AD8557A00998431 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		04EB02F72AD85B2800998431 /* FixturesList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FixturesList.storyboard; sourceTree = "<group>"; };
+		04EB02FA2AD86BF300998431 /* CustomViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04EB02DF2AD84CAE00998431 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +70,117 @@
 		04EB02C82AD82F5300998431 /* PL */ = {
 			isa = PBXGroup;
 			children = (
-				04EB02C92AD82F5300998431 /* AppDelegate.swift */,
-				04EB02CB2AD82F5300998431 /* SceneDelegate.swift */,
-				04EB02CD2AD82F5300998431 /* ViewController.swift */,
-				04EB02CF2AD82F5300998431 /* Main.storyboard */,
-				04EB02D22AD82F5400998431 /* Assets.xcassets */,
-				04EB02D42AD82F5400998431 /* LaunchScreen.storyboard */,
+				04EB02E32AD84D0200998431 /* Modules */,
+				04EB02E62AD84D7D00998431 /* Utils */,
+				04EB02E72AD84D9C00998431 /* Networking */,
+				04EB02E52AD84D6400998431 /* Extensions */,
+				04EB02E42AD84D1A00998431 /* Resources */,
+				04EB02E82AD84EEC00998431 /* AppConfig */,
 				04EB02D72AD82F5400998431 /* Info.plist */,
+				04EB02CF2AD82F5300998431 /* Main.storyboard */,
 			);
 			path = PL;
+			sourceTree = "<group>";
+		};
+		04EB02E32AD84D0200998431 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				04EB02E92AD84F1500998431 /* FixturesList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		04EB02E42AD84D1A00998431 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				04EB02D22AD82F5400998431 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		04EB02E52AD84D6400998431 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		04EB02E62AD84D7D00998431 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				04EB02F92AD86BDC00998431 /* Protocol */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		04EB02E72AD84D9C00998431 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		04EB02E82AD84EEC00998431 /* AppConfig */ = {
+			isa = PBXGroup;
+			children = (
+				04EB02D42AD82F5400998431 /* LaunchScreen.storyboard */,
+				04EB02C92AD82F5300998431 /* AppDelegate.swift */,
+				04EB02CB2AD82F5300998431 /* SceneDelegate.swift */,
+			);
+			path = AppConfig;
+			sourceTree = "<group>";
+		};
+		04EB02E92AD84F1500998431 /* FixturesList */ = {
+			isa = PBXGroup;
+			children = (
+				04EB02EC2AD84FDC00998431 /* ViewController */,
+				04EB02EA2AD84F2200998431 /* Views */,
+			);
+			path = FixturesList;
+			sourceTree = "<group>";
+		};
+		04EB02EA2AD84F2200998431 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				04EB02F22AD8544300998431 /* Team */,
+				04EB02ED2AD8512300998431 /* Fixtur */,
+				04EB02CD2AD82F5300998431 /* ViewController.swift */,
+				04EB02F72AD85B2800998431 /* FixturesList.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		04EB02EC2AD84FDC00998431 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		04EB02ED2AD8512300998431 /* Fixtur */ = {
+			isa = PBXGroup;
+			children = (
+				04EB02EE2AD851EF00998431 /* Fixtur.xib */,
+				04EB02F02AD8521400998431 /* Fixtur.swift */,
+			);
+			path = Fixtur;
+			sourceTree = "<group>";
+		};
+		04EB02F22AD8544300998431 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				04EB02F32AD8556600998431 /* Team.xib */,
+				04EB02F52AD8557A00998431 /* Team.swift */,
+			);
+			path = Team;
+			sourceTree = "<group>";
+		};
+		04EB02F92AD86BDC00998431 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				04EB02FA2AD86BF300998431 /* CustomViewProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,12 +193,16 @@
 				04EB02C22AD82F5300998431 /* Sources */,
 				04EB02C32AD82F5300998431 /* Frameworks */,
 				04EB02C42AD82F5300998431 /* Resources */,
+				04EB02FC2AD8704900998431 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = PL;
+			packageProductDependencies = (
+				04EB02DE2AD84CAE00998431 /* Alamofire */,
+			);
 			productName = PL;
 			productReference = 04EB02C62AD82F5300998431 /* PL.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +231,9 @@
 				Base,
 			);
 			mainGroup = 04EB02BD2AD82F5300998431;
+			packageReferences = (
+				04EB02DD2AD84CAE00998431 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 04EB02C72AD82F5300998431 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,12 +249,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				04EB02D62AD82F5400998431 /* LaunchScreen.storyboard in Resources */,
+				04EB02F42AD8556600998431 /* Team.xib in Resources */,
+				04EB02EF2AD851EF00998431 /* Fixtur.xib in Resources */,
 				04EB02D32AD82F5400998431 /* Assets.xcassets in Resources */,
+				04EB02F82AD85B2800998431 /* FixturesList.storyboard in Resources */,
 				04EB02D12AD82F5300998431 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04EB02FC2AD8704900998431 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04EB02C22AD82F5300998431 /* Sources */ = {
@@ -139,7 +286,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				04EB02CE2AD82F5300998431 /* ViewController.swift in Sources */,
+				04EB02FB2AD86BF300998431 /* CustomViewProtocol.swift in Sources */,
+				04EB02F12AD8521400998431 /* Fixtur.swift in Sources */,
 				04EB02CA2AD82F5300998431 /* AppDelegate.swift in Sources */,
+				04EB02F62AD8557A00998431 /* Team.swift in Sources */,
 				04EB02CC2AD82F5300998431 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,6 +517,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04EB02DD2AD84CAE00998431 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04EB02DE2AD84CAE00998431 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04EB02DD2AD84CAE00998431 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04EB02BE2AD82F5300998431 /* Project object */;
 }
