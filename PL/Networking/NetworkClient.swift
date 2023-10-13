@@ -8,24 +8,6 @@
 import Foundation
 import Alamofire
 
-protocol AnyNetwork {
-    func request<T: Decodable>(
-        targetUrl: String,
-        parameters: Parameters?,
-        method: HTTPMethod,
-        completion: @escaping (Result<T, NetworkError>) -> Void
-    )
-}
-
-struct NetworkError: Error {
-    let initialError: AFError
-    let backendError: BackendError?
-}
-
-struct BackendError: Codable, Error {
-    var status: String
-    var message: String
-}
 struct NetworkClient: AnyNetwork {
 
     let apiKay = "c7106889dbab41bbbe8484e520e59aca"
