@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ResultDomainModel {
+struct ResultFixtureDomainModel {
 
     let homeTeam: Int?
     let awayTeam: Int?
