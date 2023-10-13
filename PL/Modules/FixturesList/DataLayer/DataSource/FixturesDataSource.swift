@@ -6,3 +6,6 @@
 //
 
 import Foundation
+enum FixturesDataSource {
+    static let url = "https://api.football-data.org/v2/competitions/2021/matches"
+}

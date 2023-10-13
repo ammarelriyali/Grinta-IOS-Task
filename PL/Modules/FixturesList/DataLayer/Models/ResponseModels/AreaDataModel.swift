@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct AreaDataModel: Codable {
+    
+    let id: Int?
+    let name: String?
+}

@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct OddsDataModel: Codable {
+    
+    let msg: String?
+}

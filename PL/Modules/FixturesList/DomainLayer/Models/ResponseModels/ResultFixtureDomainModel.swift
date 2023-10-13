@@ -1,5 +1,5 @@
 //
-//  ResultDomainModel.swift
+//  ResultFixtureDomainModel.swift
 //  PL
 //
 //  Created by ammar on 13/10/2023.

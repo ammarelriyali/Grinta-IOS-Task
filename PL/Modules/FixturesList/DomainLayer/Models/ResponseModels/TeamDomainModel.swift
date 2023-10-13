@@ -9,6 +9,6 @@ import Foundation
 
 struct TeamDomainModel: Codable {
 
-    let id: Int
-    let name: String
+    let id: Int?
+    let name: String?
 }

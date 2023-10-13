@@ -11,8 +11,12 @@ protocol AnyFixturesViewModel {
     
     func loadFixtures()
 }
-
+@MainActor
 class FixturesViewModel: AnyFixturesViewModel {
-    @Published private(set) var uiState: UIState<[League]> = .initial
-    var uiStatePublisher: Published<UIState<[League]>>.Publisher { $uiState }
+    @Published private(set) var uiState: UIState<[FixtureCell]> = .initial
+    var uiStatePublisher: Published<UIState<[FixtureCell]>>.Publisher { $uiState }
+    
+    func loadFixtures() {
+        
+    }
 }

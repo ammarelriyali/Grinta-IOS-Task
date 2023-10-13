@@ -10,6 +10,6 @@ import Foundation
 struct ScoreDomainModel {
 
     var winner: FixtureStatus?
-    let fullTime: ResultDomainModel?
-    let halfTime: ResultDomainModel?
+    let fullTime: ResultFixtureDomainModel?
+    let halfTime: ResultFixtureDomainModel?
 }

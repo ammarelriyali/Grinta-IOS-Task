@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum TimeStatus {
+enum TimeStatus: Codable {
 
     case SCHEDULED
     case TIMED

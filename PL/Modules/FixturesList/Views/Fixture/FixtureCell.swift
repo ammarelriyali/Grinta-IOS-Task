@@ -44,7 +44,7 @@ class FixtureCell: UITableViewCell {
         }
     }
 
-    private func getTeamResult(_ score: ScoreDomainModel?) -> ResultDomainModel? {
+    private func getTeamResult(_ score: ScoreDomainModel?) -> ResultFixtureDomainModel? {
         if score?.fullTime != nil {return score?.fullTime}
         else if score?.halfTime != nil {return score?.halfTime}
         else {return nil}

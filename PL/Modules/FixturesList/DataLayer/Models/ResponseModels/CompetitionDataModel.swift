@@ -6,3 +6,17 @@
 //
 
 import Foundation
+struct CompetitionDataModel: Codable {
+    
+    let id: Int?
+    let area: AreaDataModel?
+    let name: String?
+    let code: String?
+    let plan: String?
+    let lastUpdated: String?
+}
+
+
+
+ 
+

@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct SeasonDataModel: Codable {
+    
+    let id: Int?
+    let startDate: String?
+    let endDate: String?
+    let currentMatchday: Int?
+    
+}
