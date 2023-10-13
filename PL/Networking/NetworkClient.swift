@@ -27,7 +27,7 @@ struct BackendError: Codable, Error {
     var message: String
 }
 struct NetworkClient: AnyNetwork {
-    
+
     let apiKay = "c7106889dbab41bbbe8484e520e59aca"
     static let shared = NetworkClient()
 

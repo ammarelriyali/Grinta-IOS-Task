@@ -7,7 +7,7 @@
 
 import Foundation
 struct CompetitionDataModel: Codable {
-    
+
     let id: Int?
     let area: AreaDataModel?
     let name: String?
@@ -15,8 +15,4 @@ struct CompetitionDataModel: Codable {
     let plan: String?
     let lastUpdated: String?
 }
-
-
-
- 
 

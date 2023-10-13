@@ -8,7 +8,7 @@
 import Foundation
 
 struct FixturesRepoImp: FixturesRepoProtocol {
-    
+
     func getFixtures(completion: @escaping (Result<[FixtureDomainModel], NetworkError>) -> Void) {
          NetworkClient.shared.request(targetUrl: FixturesDataSource.url,
                                                                       parameters: nil,
@@ -23,7 +23,7 @@ struct FixturesRepoImp: FixturesRepoProtocol {
                                                  )
                                              case .failure(let error):
                                                  completion(.failure(error))
-                                                 
+
                                              }
                                          }
                                      )

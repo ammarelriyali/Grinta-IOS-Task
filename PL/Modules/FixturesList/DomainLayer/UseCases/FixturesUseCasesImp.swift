@@ -9,13 +9,13 @@ import Foundation
 
 struct FixturesUseCasesImp: FixturesUseCasesProtocol {
     private let repository: FixturesRepoProtocol
-    
+
     init(repository: FixturesRepoProtocol) {
         self.repository = repository
     }
-    
+
     func getFixtures(completion: @escaping (Result<[FixtureDomainModel], NetworkError>) -> Void) {
-        repository.getFixtures{ (result: Result<[FixtureDomainModel], NetworkError>)  in
+        repository.getFixtures { (result: Result<[FixtureDomainModel], NetworkError>)  in
             switch result {
             case .success(let response):
 
@@ -25,14 +25,14 @@ struct FixturesUseCasesImp: FixturesUseCasesProtocol {
             }
         }
     }
-    
-    private func filterFixtures(_ fixtures: [FixtureDomainModel]) -> [FixtureDomainModel]{
+
+    private func filterFixtures(_ fixtures: [FixtureDomainModel]) -> [FixtureDomainModel] {
         let currentDate = Date()
 
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
 
         let formattedCurrentDate = dateFormatter.string(from: currentDate)
-        return fixtures.filter{ $0.date >= formattedCurrentDate}
+        return fixtures.filter { $0.date >= formattedCurrentDate}
     }
 }

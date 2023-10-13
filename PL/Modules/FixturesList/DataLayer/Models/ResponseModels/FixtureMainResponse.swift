@@ -8,11 +8,8 @@
 import Foundation
 
 struct FixtureMainResponse: Codable {
-    
+
     let count: Int?
-    let filters: [String]?
     let competition: CompetitionDataModel?
-    var matches: [MatchesDataModel]?
-    
-   
+    let matches: [MatchesDataModel]?
 }

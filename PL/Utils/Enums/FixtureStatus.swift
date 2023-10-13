@@ -7,7 +7,7 @@
 // swiftlint:disable identifier_name
 
 import Foundation
-enum FixtureStatus: Codable {
+enum FixtureStatus: String, Codable {
 
     case DRAW
     case AWAY_TEAM

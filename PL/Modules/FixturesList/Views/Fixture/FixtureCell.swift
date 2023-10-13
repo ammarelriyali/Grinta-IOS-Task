@@ -24,7 +24,7 @@ class FixtureCell: UITableViewCell {
                          teamResult: getAwayTeamResult(fixture.score))
         homeTeam.setTeam(fixture.homeTeam,
                          teamResult: getHomeTeamResult(fixture.score))
-        status.text = getStatus(fixture.status ?? .SCHEDULED)
+        status.text = getStatus(fixture.status ?? .SCHEDULED, time: fixture.time)
 
     }
 
@@ -45,12 +45,10 @@ class FixtureCell: UITableViewCell {
     }
 
     private func getTeamResult(_ score: ScoreDomainModel?) -> ResultFixtureDomainModel? {
-        if score?.fullTime != nil {return score?.fullTime}
-        else if score?.halfTime != nil {return score?.halfTime}
-        else {return nil}
+        if score?.fullTime != nil {return score?.fullTime} else if score?.halfTime != nil {return score?.halfTime} else {return nil}
     }
 
-    private func getStatus(_ status: TimeStatus) -> String {
+    private func getStatus(_ status: TimeStatus, time: String) -> String {
 
         switch status {
 
@@ -61,7 +59,7 @@ class FixtureCell: UITableViewCell {
         case .IN_PLAY:
             return "live"
         default:
-            return "12:34"
+            return time
         }
     }
 

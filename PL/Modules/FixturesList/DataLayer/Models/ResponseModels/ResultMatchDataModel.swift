@@ -8,7 +8,7 @@
 import Foundation
 
 struct ResultMatchDataModel: Codable {
-    
+
     let homeTeam: Int?
     let awayTeam: Int?
     func mapToDomainModel() -> ResultFixtureDomainModel {

@@ -8,7 +8,7 @@
 import Foundation
 
 struct RefereeDataModel: Codable {
-    
+
     let id: Int?
     let name: String?
     let role: String?

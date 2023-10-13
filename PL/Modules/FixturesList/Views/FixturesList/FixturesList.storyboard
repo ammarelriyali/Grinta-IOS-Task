@@ -17,17 +17,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zgI-wA-lZE">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="91" width="393" height="761"/>
                                 <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
                             </tableView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hv0-yU-ENE">
+                                <rect key="frame" x="321" y="52" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zgI-wA-lZE" secondAttribute="trailing" id="4Je-PW-j98"/>
                             <constraint firstItem="zgI-wA-lZE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="8H0-sO-wmd"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="zgI-wA-lZE" secondAttribute="bottom" id="VUc-El-yBo"/>
-                            <constraint firstItem="zgI-wA-lZE" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="n3J-8R-oli"/>
+                            <constraint firstAttribute="bottom" secondItem="zgI-wA-lZE" secondAttribute="bottom" id="RGo-1J-P1k"/>
+                            <constraint firstItem="zgI-wA-lZE" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="32" id="n3J-8R-oli"/>
                         </constraints>
                     </view>
                     <connections>
@@ -41,7 +45,7 @@
     </scenes>
     <resources>
         <systemColor name="secondarySystemFillColor">
-            <color red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

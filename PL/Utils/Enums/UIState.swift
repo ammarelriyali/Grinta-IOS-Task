@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum UIState<T>{
+enum UIState {
     case initial
     case loading
-    case loaded(data: T)
-    case error(error: any Error)
+    case loaded
+    case error(error: NetworkError)
 }

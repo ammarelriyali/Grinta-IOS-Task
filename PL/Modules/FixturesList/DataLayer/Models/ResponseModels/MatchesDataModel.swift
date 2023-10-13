@@ -6,8 +6,8 @@
 //
 
 import Foundation
-struct MatchesDataModel : Codable {
-    
+struct MatchesDataModel: Codable {
+
     let id: Int?
     let season: SeasonDataModel?
     let utcDate: String?
@@ -21,9 +21,9 @@ struct MatchesDataModel : Codable {
     let homeTeam: TeamDataModel?
     let awayTeam: TeamDataModel?
     let referees: [RefereeDataModel]?
-    
+
     func mapToDomainModel() -> FixtureDomainModel {
-        
+
         return FixtureDomainModel(id: id,
                                   status: status,
                                   score: score?.mapToDomainModel(),
@@ -32,27 +32,27 @@ struct MatchesDataModel : Codable {
                                   date: getData(utcDate),
                                   time: getTime(utcDate))
     }
-    
+
     private func getTime(_ utcDate: String?) -> String {
-        
+
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         guard let date = dateFormatter.date(from: utcDate ?? "2024-01-13T00:00:00Z" )
         else {return ""}
-        
+
         let dateFormatterTime = DateFormatter()
         dateFormatterTime.dateFormat = "HH:mm"
         let formattedTime = dateFormatterTime.string(from: date)
         return formattedTime
     }
-    
+
     private func getData(_ utcDate: String?) -> String {
-        
+
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         guard let date = dateFormatter.date(from: utcDate ?? "2024-01-13T00:00:00Z" )
         else {return ""}
-        
+
         let dateFormatterDate = DateFormatter()
         dateFormatterDate.dateFormat = "yyyy-MM-dd"
         let formattedDate = dateFormatterDate.string(from: date)
