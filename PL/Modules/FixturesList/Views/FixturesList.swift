@@ -51,6 +51,9 @@ class FixturesList: UIViewController {
         initTable()
         for fixture in fakeData {
             data[fixture.date, default: []].append(fixture)
+            data[fixture.date, default: []].sort { fixtureOne, FixtureTwo in
+                fixtureOne.time > FixtureTwo.time
+            }
         }
         arrSection =  Array(data.keys).sorted()
 
