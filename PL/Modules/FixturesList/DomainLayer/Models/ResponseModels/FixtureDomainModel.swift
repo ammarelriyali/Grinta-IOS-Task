@@ -14,4 +14,5 @@ struct FixtureDomainModel {
     let awayTeam: TeamDomainModel?
     let date: String
     let time: String
+    var isFavorite: Bool?
 }

@@ -15,4 +15,3 @@ struct CompetitionDataModel: Codable {
     let plan: String?
     let lastUpdated: String?
 }
-

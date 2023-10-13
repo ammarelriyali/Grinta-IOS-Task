@@ -15,4 +15,5 @@ protocol AnyFixturesViewModel {
     func getSection(_ index: Int) -> String
     func getFixture(_ index: IndexPath) -> FixtureDomainModel
     func getFixtureCount(_ index: Int) -> Int
+    func setFav(_ index: IndexPath)
 }

@@ -22,7 +22,7 @@
                         <rect key="frame" x="8" y="2" width="304" height="73"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mp6-eV-a1I" customClass="TeamView" customModule="PL" customModuleProvider="target">
-                                <rect key="frame" x="64" y="8" width="184" height="25"/>
+                                <rect key="frame" x="64" y="8" width="198" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Z3W-lr-POj"/>
                                 </constraints>
@@ -36,37 +36,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bN-oI-pk1">
-                                <rect key="frame" x="256" y="11.666666666666664" width="40" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="0Yc-Y4-Xcg"/>
-                                    <constraint firstAttribute="width" constant="40" id="sgJ-8F-ruZ"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <imageReference key="image" image="star" catalog="system" symbolScale="large"/>
-                                </buttonConfiguration>
-                            </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B8C-90-w8N" customClass="TeamView" customModule="PL" customModuleProvider="target">
-                                <rect key="frame" x="64" y="40" width="184" height="25"/>
+                                <rect key="frame" x="64" y="40" width="198" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="XnL-Wk-LWc"/>
                                 </constraints>
                             </containerView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wuu-HQ-B6y">
+                                <rect key="frame" x="270" y="18.666666666666664" width="30" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="9aW-Y5-mFa"/>
+                                    <constraint firstAttribute="height" constant="40" id="Abh-bL-76I"/>
+                                </constraints>
+                                <imageReference key="image" image="heart.fill" catalog="system" symbolScale="default"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zGl-pT-bQI"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mp6-eV-a1I" firstAttribute="top" secondItem="QIh-vz-ZDL" secondAttribute="top" constant="8" id="0Ti-cP-DMx"/>
                             <constraint firstItem="B8C-90-w8N" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mp6-eV-a1I" secondAttribute="bottom" constant="4" id="0Zu-GZ-mRC"/>
-                            <constraint firstAttribute="trailing" secondItem="0bN-oI-pk1" secondAttribute="trailing" constant="8" id="1TN-PO-0tw"/>
+                            <constraint firstItem="wuu-HQ-B6y" firstAttribute="centerY" secondItem="QIh-vz-ZDL" secondAttribute="centerY" id="GxN-M0-gtB"/>
                             <constraint firstItem="mp6-eV-a1I" firstAttribute="leading" secondItem="f16-kU-VHP" secondAttribute="trailing" constant="16" id="I2N-cs-KAw"/>
                             <constraint firstItem="f16-kU-VHP" firstAttribute="leading" secondItem="QIh-vz-ZDL" secondAttribute="leading" constant="8" id="Jp8-1N-8gg"/>
-                            <constraint firstItem="0bN-oI-pk1" firstAttribute="leading" secondItem="mp6-eV-a1I" secondAttribute="trailing" constant="8" id="TyX-J9-ckK"/>
+                            <constraint firstAttribute="trailing" secondItem="wuu-HQ-B6y" secondAttribute="trailing" constant="4" id="PyV-AO-be2"/>
                             <constraint firstItem="B8C-90-w8N" firstAttribute="leading" secondItem="f16-kU-VHP" secondAttribute="trailing" constant="16" id="UlU-DX-new"/>
-                            <constraint firstItem="0bN-oI-pk1" firstAttribute="centerY" secondItem="QIh-vz-ZDL" secondAttribute="centerY" id="e3y-eX-irA"/>
-                            <constraint firstItem="0bN-oI-pk1" firstAttribute="leading" secondItem="B8C-90-w8N" secondAttribute="trailing" constant="8" id="rbM-4k-lek"/>
+                            <constraint firstItem="wuu-HQ-B6y" firstAttribute="leading" secondItem="mp6-eV-a1I" secondAttribute="trailing" constant="8" id="bnp-Ak-p4d"/>
+                            <constraint firstItem="wuu-HQ-B6y" firstAttribute="leading" secondItem="B8C-90-w8N" secondAttribute="trailing" constant="8" id="odQ-bU-Udu"/>
                             <constraint firstAttribute="bottom" secondItem="f16-kU-VHP" secondAttribute="bottom" constant="8" id="rn7-6Q-vIS"/>
                             <constraint firstAttribute="bottom" secondItem="B8C-90-w8N" secondAttribute="bottom" constant="8" id="sG5-oN-FeJ"/>
                             <constraint firstItem="f16-kU-VHP" firstAttribute="top" secondItem="QIh-vz-ZDL" secondAttribute="top" constant="8" id="xFC-Ae-Ebi"/>
@@ -84,7 +80,7 @@
             <connections>
                 <outlet property="awayTeam" destination="B8C-90-w8N" id="k0k-Na-GOU"/>
                 <outlet property="background" destination="QIh-vz-ZDL" id="Huq-HJ-X9J"/>
-                <outlet property="favourite" destination="0bN-oI-pk1" id="5Yu-Dh-zts"/>
+                <outlet property="favourite" destination="wuu-HQ-B6y" id="PKb-KF-vqa"/>
                 <outlet property="homeTeam" destination="mp6-eV-a1I" id="PrL-RZ-gQb"/>
                 <outlet property="status" destination="f16-kU-VHP" id="ePH-8J-2K3"/>
             </connections>
@@ -92,7 +88,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
         <systemColor name="secondarySystemFillColor">
             <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

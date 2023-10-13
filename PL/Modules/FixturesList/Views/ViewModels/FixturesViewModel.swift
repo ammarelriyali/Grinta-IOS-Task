@@ -60,4 +60,7 @@ class FixturesViewModel: AnyFixturesViewModel {
     func getFixtureCount(_ index: Int) -> Int {
         data[section[index]]?.count ?? 0
     }
+    func setFav(_ index: IndexPath){
+        data[section[index.section], default: []][index.row].isFavorite?.toggle()
+    }
 }

@@ -19,11 +19,18 @@ extension FixturesList: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(FixtureCell.self, for: indexPath)
-        cell.setFixture(viewModel.getFixture(indexPath))
+        cell.setFixture(viewModel.getFixture(indexPath), onFavClicked: {[weak self] in
+            guard let self = self else {return false}
+            self.viewModel.setFav(indexPath)
+            return self.viewModel.getFixture(indexPath).isFavorite ?? false
+              })
         return cell
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return viewModel.getSection(section)
         }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat(40)
+    }
 }

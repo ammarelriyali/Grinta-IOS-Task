@@ -30,7 +30,8 @@ struct MatchesDataModel: Codable {
                                   homeTeam: homeTeam?.mapToDomainModel(),
                                   awayTeam: awayTeam?.mapToDomainModel(),
                                   date: getData(utcDate),
-                                  time: getTime(utcDate))
+                                  time: getTime(utcDate),
+                                  isFavorite: false)
     }
 
     private func getTime(_ utcDate: String?) -> String {
