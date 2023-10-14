@@ -8,6 +8,7 @@
 import Foundation
 
 struct FixturesUseCasesImp: FixturesUseCasesProtocol {
+
     private let repository: FixturesRepoProtocol
 
     init(repository: FixturesRepoProtocol) {
@@ -34,5 +35,17 @@ struct FixturesUseCasesImp: FixturesUseCasesProtocol {
 
         let formattedCurrentDate = dateFormatter.string(from: currentDate)
         return fixtures.filter { $0.date >= formattedCurrentDate}
+    }
+
+    func getSavedIds(completion: @escaping ([Int]) -> Void) {
+        repository.getSavedIds(completion: completion)
+    }
+
+    func appendId(id: Int) {
+        repository.appendId(id: id)
+    }
+
+    func remveId(id: Int) {
+        repository.remveId(id: id)
     }
 }

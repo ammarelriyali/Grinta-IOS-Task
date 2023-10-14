@@ -39,6 +39,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" preferredStyle="sliding" translatesAutoresizingMaskIntoConstraints="NO" id="7Dk-Pb-aol">
                                 <rect key="frame" x="292" y="83" width="51" height="30"/>
                                 <color key="onTintColor" name="AccentColor"/>
+                                <connections>
+                                    <action selector="switchValueChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="Rcy-1H-Yms"/>
+                                </connections>
                             </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -58,6 +61,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="switcher" destination="7Dk-Pb-aol" id="DUH-Hr-ihJ"/>
                         <outlet property="tableView" destination="zgI-wA-lZE" id="9pD-7o-3mm"/>
                     </connections>
                 </viewController>

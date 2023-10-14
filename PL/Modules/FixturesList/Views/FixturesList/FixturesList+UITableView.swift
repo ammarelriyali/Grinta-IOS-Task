@@ -22,6 +22,11 @@ extension FixturesList: UITableViewDataSource, UITableViewDelegate {
         cell.setFixture(viewModel.getFixture(indexPath), onFavClicked: {[weak self] in
             guard let self = self else {return false}
             self.viewModel.setFav(indexPath)
+            if switcher.isOn {
+                self.viewModel.filterFav()
+                let allSections = IndexSet(integersIn: 0..<tableView.numberOfSections)
+                tableView.reloadSections(allSections, with: .automatic)
+            }
             return self.viewModel.getFixture(indexPath).isFavorite ?? false
               })
         return cell

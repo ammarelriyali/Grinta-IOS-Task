@@ -16,4 +16,5 @@ protocol AnyFixturesViewModel {
     func getFixture(_ index: IndexPath) -> FixtureDomainModel
     func getFixtureCount(_ index: Int) -> Int
     func setFav(_ index: IndexPath)
+    func filterFav()
 }

@@ -14,36 +14,28 @@ class FixtureCell: UITableViewCell {
     @IBOutlet private weak var status: UILabel!
     @IBOutlet private weak var background: UIView!
     @IBOutlet private weak var awayTeam: TeamView!
-    
-    var onFavClicked: (() -> Bool)? = nil
-    
+
+    var onFavClicked: (() -> Bool)?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         background.makeBorder()
-        
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                          action: #selector(imageTapped(tapGestureRecognizer:)))
         favourite.isUserInteractionEnabled = true
         favourite.addGestureRecognizer(tapGestureRecognizer)
-        
+
     }
-    
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
-    {
-        print("clicked")
+
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         guard let onFavClicked = onFavClicked else {return}
-        
         if onFavClicked() {
             setFavourite()
-            print("setFavourite()")
-        }
-        else {
+        } else {
             setUnfavourite()
-            print("setUnfavourite()")
         }
     }
-    
-
-    
 
     func setFixture(_ fixture: FixtureDomainModel, onFavClicked: @escaping () -> Bool ) {
         awayTeam.setTeam(fixture.awayTeam,
@@ -52,11 +44,10 @@ class FixtureCell: UITableViewCell {
                          teamResult: getHomeTeamResult(fixture.score))
         status.text = getStatus(fixture.status ?? .SCHEDULED, time: fixture.time)
         self.onFavClicked = onFavClicked
-        
+
         if fixture.isFavorite ?? false {
             setFavourite()
-        }
-        else {
+        } else {
             setUnfavourite()
         }
     }
@@ -78,9 +69,11 @@ class FixtureCell: UITableViewCell {
     }
 
     private func getTeamResult(_ score: ScoreDomainModel?) -> ResultFixtureDomainModel? {
-        if score?.fullTime != nil {return score?.fullTime}
-        else if score?.halfTime != nil {return score?.halfTime}
-        else {return nil}
+        if score?.fullTime != nil {
+            return score?.fullTime
+        } else if score?.halfTime != nil {
+            return score?.halfTime
+        } else {return nil}
     }
 
     private func getStatus(_ status: TimeStatus, time: String) -> String {
@@ -101,13 +94,12 @@ class FixtureCell: UITableViewCell {
     private func setFavourite() {
         if let newImage = UIImage(systemName: "heart.fill") {
             favourite.image = newImage
-             }
+        }
     }
     private func setUnfavourite() {
         if let newImage = UIImage(systemName: "heart") {
             favourite.image = newImage
-             }
-        
+        }
 
     }
 }
