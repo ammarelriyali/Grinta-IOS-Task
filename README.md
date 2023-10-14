@@ -8,7 +8,6 @@
 4. [Design](#design)
 5. [Why These Choices](#why-these-choices)
 5. [Caveats](#caveats)
-6. [Technologies Used](#technologies-used)
 ## Introduction
 
 The "PL" project is designed to provide users with access to fixtures from the Premier League.
