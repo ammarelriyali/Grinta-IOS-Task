@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="91" id="KGk-i7-Jjw" customClass="FixtureCell" customModule="PL" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIh-vz-ZDL">
+                        <rect key="frame" x="8" y="2" width="304" height="73"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mp6-eV-a1I" customClass="TeamView" customModule="PL" customModuleProvider="target">
+                                <rect key="frame" x="64" y="8" width="198" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Z3W-lr-POj"/>
+                                </constraints>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22:44" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f16-kU-VHP">
+                                <rect key="frame" x="8" y="8" width="40" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="o3G-a6-cPq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B8C-90-w8N" customClass="TeamView" customModule="PL" customModuleProvider="target">
+                                <rect key="frame" x="64" y="40" width="198" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="XnL-Wk-LWc"/>
+                                </constraints>
+                            </containerView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wuu-HQ-B6y">
+                                <rect key="frame" x="270" y="18.666666666666664" width="30" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="9aW-Y5-mFa"/>
+                                    <constraint firstAttribute="height" constant="40" id="Abh-bL-76I"/>
+                                </constraints>
+                                <imageReference key="image" image="heart.fill" catalog="system" symbolScale="default"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zGl-pT-bQI"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mp6-eV-a1I" firstAttribute="top" secondItem="QIh-vz-ZDL" secondAttribute="top" constant="8" id="0Ti-cP-DMx"/>
+                            <constraint firstItem="B8C-90-w8N" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mp6-eV-a1I" secondAttribute="bottom" constant="4" id="0Zu-GZ-mRC"/>
+                            <constraint firstItem="wuu-HQ-B6y" firstAttribute="centerY" secondItem="QIh-vz-ZDL" secondAttribute="centerY" id="GxN-M0-gtB"/>
+                            <constraint firstItem="mp6-eV-a1I" firstAttribute="leading" secondItem="f16-kU-VHP" secondAttribute="trailing" constant="16" id="I2N-cs-KAw"/>
+                            <constraint firstItem="f16-kU-VHP" firstAttribute="leading" secondItem="QIh-vz-ZDL" secondAttribute="leading" constant="8" id="Jp8-1N-8gg"/>
+                            <constraint firstAttribute="trailing" secondItem="wuu-HQ-B6y" secondAttribute="trailing" constant="4" id="PyV-AO-be2"/>
+                            <constraint firstItem="B8C-90-w8N" firstAttribute="leading" secondItem="f16-kU-VHP" secondAttribute="trailing" constant="16" id="UlU-DX-new"/>
+                            <constraint firstItem="wuu-HQ-B6y" firstAttribute="leading" secondItem="mp6-eV-a1I" secondAttribute="trailing" constant="8" id="bnp-Ak-p4d"/>
+                            <constraint firstItem="wuu-HQ-B6y" firstAttribute="leading" secondItem="B8C-90-w8N" secondAttribute="trailing" constant="8" id="odQ-bU-Udu"/>
+                            <constraint firstAttribute="bottom" secondItem="f16-kU-VHP" secondAttribute="bottom" constant="8" id="rn7-6Q-vIS"/>
+                            <constraint firstAttribute="bottom" secondItem="B8C-90-w8N" secondAttribute="bottom" constant="8" id="sG5-oN-FeJ"/>
+                            <constraint firstItem="f16-kU-VHP" firstAttribute="top" secondItem="QIh-vz-ZDL" secondAttribute="top" constant="8" id="xFC-Ae-Ebi"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="QIh-vz-ZDL" secondAttribute="trailing" constant="8" id="CcG-gO-w2J"/>
+                    <constraint firstItem="QIh-vz-ZDL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="jxk-uV-BF3"/>
+                    <constraint firstAttribute="bottom" secondItem="QIh-vz-ZDL" secondAttribute="bottom" constant="2" id="x4H-MY-RKF"/>
+                    <constraint firstItem="QIh-vz-ZDL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="zZp-nE-Bvm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="awayTeam" destination="B8C-90-w8N" id="k0k-Na-GOU"/>
+                <outlet property="background" destination="QIh-vz-ZDL" id="Huq-HJ-X9J"/>
+                <outlet property="favourite" destination="wuu-HQ-B6y" id="PKb-KF-vqa"/>
+                <outlet property="homeTeam" destination="mp6-eV-a1I" id="PrL-RZ-gQb"/>
+                <outlet property="status" destination="f16-kU-VHP" id="ePH-8J-2K3"/>
+            </connections>
+            <point key="canvasLocation" x="80.916030534351137" y="-96.83098591549296"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <systemColor name="secondarySystemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

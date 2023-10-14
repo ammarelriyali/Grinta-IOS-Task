@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Fixtures List-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="FixturesList" customModule="PL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zgI-wA-lZE">
+                                <rect key="frame" x="0.0" y="130" width="393" height="722"/>
+                                <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjw-xW-0lR">
+                                <rect key="frame" x="16" y="75" width="38" height="39"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fal-hH-lkA">
+                                <rect key="frame" x="345" y="86.333333333333329" width="40" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ITX-8L-1d2"/>
+                                    <constraint firstAttribute="width" constant="40" id="uPk-n5-nNP"/>
+                                </constraints>
+                                <imageReference key="image" image="heart.fill" catalog="system" symbolScale="small"/>
+                            </imageView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" preferredStyle="sliding" translatesAutoresizingMaskIntoConstraints="NO" id="7Dk-Pb-aol">
+                                <rect key="frame" x="292" y="83" width="51" height="30"/>
+                                <color key="onTintColor" name="AccentColor"/>
+                                <connections>
+                                    <action selector="switchValueChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="Rcy-1H-Yms"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zgI-wA-lZE" secondAttribute="trailing" id="4Je-PW-j98"/>
+                            <constraint firstItem="fal-hH-lkA" firstAttribute="bottom" secondItem="7Dk-Pb-aol" secondAttribute="bottom" id="4hu-Ur-TPe"/>
+                            <constraint firstItem="zgI-wA-lZE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="8H0-sO-wmd"/>
+                            <constraint firstItem="fal-hH-lkA" firstAttribute="top" secondItem="7Dk-Pb-aol" secondAttribute="top" id="KGi-X6-iNf"/>
+                            <constraint firstAttribute="bottom" secondItem="zgI-wA-lZE" secondAttribute="bottom" id="RGo-1J-P1k"/>
+                            <constraint firstItem="zgI-wA-lZE" firstAttribute="top" secondItem="tjw-xW-0lR" secondAttribute="bottom" constant="16" id="ayJ-UX-gFw"/>
+                            <constraint firstItem="7Dk-Pb-aol" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="24" id="ep1-BE-f54"/>
+                            <constraint firstItem="tjw-xW-0lR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="fEO-ZG-DCP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fal-hH-lkA" secondAttribute="trailing" constant="8" id="lsY-Xg-JLq"/>
+                            <constraint firstItem="fal-hH-lkA" firstAttribute="leading" secondItem="7Dk-Pb-aol" secondAttribute="trailing" constant="4" id="sDp-tx-MwT"/>
+                            <constraint firstItem="tjw-xW-0lR" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="wZw-0C-z6y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="switcher" destination="7Dk-Pb-aol" id="DUH-Hr-ihJ"/>
+                        <outlet property="tableView" destination="zgI-wA-lZE" id="9pD-7o-3mm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-127.48091603053435" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="secondarySystemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
