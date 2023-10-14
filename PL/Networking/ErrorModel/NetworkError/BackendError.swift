@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BackendError: Codable, Error {
+struct BackendError: Codable, Error, Equatable {
     var status: String
     var message: String
 }

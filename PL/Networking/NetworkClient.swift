@@ -10,8 +10,9 @@ import Alamofire
 
 struct NetworkClient: AnyNetwork {
 
-    let apiKay = "c7106889dbab41bbbe8484e520e59aca"
     static let shared = NetworkClient()
+
+    private let apiKay = "c7106889dbab41bbbe8484e520e59aca"
 
     func request<T: Decodable>(
         targetUrl: String,
