@@ -1,5 +1,5 @@
 //
-//  FixturesUseCasesTest.swift
+//  FixturesUseCaseTest.swift
 //  PLTests
 //
 //  Created by ammar on 14/10/2023.
@@ -7,28 +7,181 @@
 
 import XCTest
 @testable import PL
+import Alamofire
 
-final class FixturesUseCasesTest: XCTestCase {
-
+final class FixturesUseCaseTest: XCTestCase {
+    
+    private var repo: MockFixturesRepo!
+    private var useCase: FixturesUseCasesProtocol!
+    private let fixtureWithCorrectDate = FixtureDomainModel(id: 0,
+                                                            status: nil,
+                                                            score: nil,
+                                                            homeTeam: nil,
+                                                            awayTeam: nil,
+                                                            date: "2024-01-11",
+                                                            time: "",
+                                                            isFavorite: nil)
+    private let fixture = FixtureDomainModel(id: 0,
+                                             status: nil,
+                                             score: nil,
+                                             homeTeam: nil,
+                                             awayTeam: nil,
+                                             date: "",
+                                             time: "",
+                                             isFavorite: nil)
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        repo = MockFixturesRepo()
+        repo.ids = []
+        repo.result = nil
+        useCase = FixturesUseCasesImp(repository: repo)
     }
-
-   
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testLoadFixturesSuccessWithCorrectDate() {
+        
+        repo.result = .success([fixtureWithCorrectDate])
+        // Create an expectation for the completion closure
+        let expectation = XCTestExpectation(description: "Fetch completion")
+        
+        // Call the fetch method and assert the result
+        useCase.getFixtures { (result: Result<[FixtureDomainModel], NetworkError>) in
+            switch result {
+            case .success(let data):
+                XCTAssertTrue(!data.isEmpty)
+            default:
+                XCTFail("")
+            }
+            // Fulfill the expectation to indicate that the completion closure has been called
+            expectation.fulfill()
         }
     }
-
+    
+    func testLoadFixturesSuccessWithIncorrectData() {
+        
+        repo.result = .success([fixture])
+        // Create an expectation for the completion closure
+        let expectation = XCTestExpectation(description: "Fetch completion")
+        
+        // Call the fetch method and assert the result
+        useCase.getFixtures { (result: Result<[FixtureDomainModel], NetworkError>) in
+            switch result {
+            case .success(let data):
+                XCTAssertTrue(data.isEmpty)
+            default:
+                XCTFail("")
+            }
+            // Fulfill the expectation to indicate that the completion closure has been called
+            expectation.fulfill()
+        }
+    }
+    
+    func testLoadFixturesErrorFailure() {
+        
+        let error = NetworkError(initialError: .explicitlyCancelled, backendError: BackendError(status: "", message: ""))
+        
+        repo.result = .failure(error)
+        
+        // Create an expectation for the completion closure
+        let expectation = XCTestExpectation(description: "Fetch completion")
+        
+        // Call the fetch method and assert the result
+        useCase.getFixtures { (result: Result<[FixtureDomainModel], NetworkError>) in
+            switch result {
+            case .failure(let errorResult):
+                XCTAssertTrue(error == errorResult)
+            default:
+                XCTFail("")
+            }
+            // Fulfill the expectation to indicate that the completion closure has been called
+            expectation.fulfill()
+        }
+    }
+    
+    func testGetIdsSuccess() {
+        
+        
+        repo.ids = [fixture.id ?? 0]
+        
+        // Create an expectation for the completion closure
+        let expectation = XCTestExpectation(description: "Fetch completion")
+        
+        // Call the fetch method and assert the result
+        useCase.getSavedIds(completion: { ids in
+            XCTAssertTrue( ids.contains(where: {$0 == (self.fixture.id ?? 0)}))
+            // Fulfill the expectation to indicate that the completion closure has been called
+            expectation.fulfill()
+        })
+    }
+    
+    func testGetIdsFailure() {
+        repo.ids = [fixture.id ?? 0]
+        
+        // Create an expectation for the completion closure
+        let expectation = XCTestExpectation(description: "Fetch completion")
+        
+        // Call the fetch method and assert the result
+        useCase.getSavedIds(completion: { ids in
+            XCTAssertTrue( !ids.contains(where: {$0 == 3}))
+            // Fulfill the expectation to indicate that the completion closure has been called
+            expectation.fulfill()
+        })
+    }
+    
+    func testAppendIdSuccess() {
+        
+        // Create an expectation for the completion closure
+        let expectation = XCTestExpectation(description: "Fetch completion")
+        
+        // Call the fetch method and assert the result
+        useCase.appendId(id: fixture.id ?? 0)
+        useCase.getSavedIds(completion: { ids in
+            XCTAssertTrue( ids.contains(where: {$0 == (self.fixture.id ?? 0)}))
+            // Fulfill the expectation to indicate that the completion closure has been called
+            expectation.fulfill()
+        })
+    }
+    
+    func testAppendIdFailure() {
+        // Create an expectation for the completion closure
+        let expectation = XCTestExpectation(description: "Fetch completion")
+        
+        // Call the fetch method and assert the result
+        useCase.appendId(id: fixture.id ?? 0)
+        useCase.getSavedIds(completion: { ids in
+            XCTAssertTrue( !ids.contains(where: {$0 ==  3}))
+            // Fulfill the expectation to indicate that the completion closure has been called
+            expectation.fulfill()
+        })
+    }
+    
+    func testRemoveIdSuccess() {
+        repo.ids = [fixture.id ?? 0]
+        // Create an expectation for the completion closure
+        let expectation = XCTestExpectation(description: "Fetch completion")
+        
+        // Call the fetch method and assert the result
+        useCase.remveId(id: fixture.id ?? 0)
+        useCase.getSavedIds(completion: { ids in
+            XCTAssertTrue( !ids.contains(where: {$0 ==  (self.fixture.id ?? 0)}))
+            // Fulfill the expectation to indicate that the completion closure has been called
+            expectation.fulfill()
+        })
+    }
+    
+    func testRemoveIdFailure() {
+        
+        repo.ids = [fixture.id ?? 0]
+        // Create an expectation for the completion closure
+        let expectation = XCTestExpectation(description: "Fetch completion")
+        
+        // Call the fetch method and assert the result
+        useCase.remveId(id: 2)
+        useCase.getSavedIds(completion: { ids in
+            XCTAssertTrue( ids.contains(where: {$0 ==  (self.fixture.id ?? 0)}))
+            // Fulfill the expectation to indicate that the completion closure has been called
+            expectation.fulfill()
+        })
+    }
+    
 }

@@ -20,19 +20,21 @@ final class NetworkingTest: XCTestCase {
 
     func testLoadDataFromURL() {
         let exp = expectation(description: "waiting for the API")
-        NetworkClient.shared.request(targetUrl: FixturesDataSource.url, parameters: nil, method: .get) { (result: Result<FixtureMainResponse, NetworkError>) in
+        NetworkClient.shared.request(targetUrl: FixturesDataSource.url,
+                                     parameters: nil
+                                     , method: .get) { (result: Result<FixtureMainResponse,
+                                                                       NetworkError>) in
             switch result {
             case .success(let data):
                 guard let count = data.matches?.count else {
-                    XCTFail()
+                    XCTFail("data empty")
                     exp.fulfill()
                     return
                 }
                 XCTAssertGreaterThan(count, 0, "arr is empty ")
                 exp.fulfill()
             case .failure(let error):
-                print(error.localizedDescription)
-                XCTFail()
+                XCTFail(error.localizedDescription)
                 exp.fulfill()
             }
         }
